@@ -12,7 +12,7 @@ A meme that captures how I currently feel about my university studies is ![](htt
 
 
 <h1>This is for STATS 220 project 1</h1> 
-<h2>little about me part 2</h2>
+<h2> A little about me part 2</h2>
 <ul>
   <li>I am doing project 1</li>
   <li>I attends to all lectures</li>
