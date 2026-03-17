@@ -22,5 +22,5 @@ A meme that captures how I currently feel about my university studies is ![](htt
   <li>I am learning R</li>
 </ol>
 
-![Link to Data Science Club website](https://www.uoadsc.com/)
+[Link to Data Science Club website](https://www.uoadsc.com/)
 ![A different animated GIF](https://i.pinimg.com/originals/85/db/98/85db9826348c79d166dd31188f7218fa.gif)
