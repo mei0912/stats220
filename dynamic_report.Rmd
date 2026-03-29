@@ -1,0 +1,27 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+```
+
+## The report is tracking my nnumber of steps every day and its details such as steps ranges, hours walking, activities contributed most to my number of steps in the day, tracking dates and tracking methods.
+
+You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
+
+```{r}
+pets <- c("cat", "dog", "turtle", "rabbit")
+best_pet <- pets[1]
+
+```
+
+The best pet to have is a `r best_pet` of course!
+
+![Link to Survey](https://docs.google.com/forms/d/e/1FAIpQLSdohddK0_waSwP9sDTrTJAstk_48ymqw9wasI7F6z-kWx36SQ/viewform?usp=dialog)
