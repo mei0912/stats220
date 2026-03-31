@@ -10,18 +10,126 @@ knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
 
 ```{css}
 
+body {
+  background: lightblue;
+}
+h2 {
+  color: red;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+}
+p {
+  color: black;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
 ```
 
-## The report is tracking my nnumber of steps every day and its details such as steps ranges, hours walking, activities contributed most to my number of steps in the day, tracking dates and tracking methods.
-
-You need to change the contents of this Rmd! Replace the R code and markdown give below in this template document.
+## The report is tracking my number of steps and walking hours every day with question about steps ranges, hours walking, activities contributed most to my number of steps in the day, tracking dates and tracking methods.
 
 ```{r}
-pets <- c("cat", "dog", "turtle", "rabbit")
-best_pet <- pets[1]
+library(tidyverse)
+csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWnCHH54zMXjApZ3AWLD5HP-F27-AL88Hd4FzOcmiFK8fPQfVwF6dQUml0-FrWEMjsdKAS8XAa7GL0/pub?gid=1032254020&single=true&output=csv"
+logged_data <- read_csv(csv_file)
+logged_data
+
+#rename variables in logged_data data frame
+latest_data <- logged_data %>%
+  rename(date_time_completing_survey  = 1,
+         steps_range = 3,
+         hours_walking = 4,
+         activities = 5,
+         actual_date = 6,
+         tracking_methods = 7) 
+latest_data
+
+#first actual date recorded
+start_date <- latest_data$actual_date[1]
+
+#last actual date recorded
+last_date <- latest_data$actual_date[length(latest_data$actual_date)]
+
+#number of responses
+num_dates <- nrow(latest_data) 
 
 ```
 
-The best pet to have is a `r best_pet` of course!
+The data was collected from `r start_date` to `r last_date` which was `r num_dates` days.
 
-![Link to Survey](https://docs.google.com/forms/d/e/1FAIpQLSdohddK0_waSwP9sDTrTJAstk_48ymqw9wasI7F6z-kWx36SQ/viewform?usp=dialog)
+
+```{r}
+#plot each variable
+ggplot(data = latest_data) +
+  geom_bar(aes(x = steps_range), fill="orange") +
+  labs(title = "Steps ranges distribution")
+
+less_than_1000 <- sum(grepl("< 1000", latest_data$steps_range, ignore.case = TRUE))
+
+from_1000_to_4000 <- sum(grepl("1000 - 4000", latest_data$steps_range, ignore.case = TRUE))
+
+from_4000_to_7000 <- sum(grepl("4000 - 7000", latest_data$steps_range, ignore.case = TRUE))
+
+from_7000_to_10000 <- sum(grepl("7000 - 10000", latest_data$steps_range, ignore.case = TRUE))
+
+more_than_10000 <- sum(grepl("> 10000", latest_data$steps_range, ignore.case = TRUE))
+
+ranges <- c(
+  "less than 1000" = less_than_1000,
+  "1000 - 4000" = from_1000_to_4000,
+  "4000 - 7000" = from_4000_to_7000,
+  "7000 - 10000" = from_7000_to_10000,
+  "more than 10000" = more_than_10000
+)
+
+most_frequent_range <- names(ranges)[which.max(ranges)]
+most_frequent_count <- max(ranges)
+
+least_frequent_range <- names(ranges)[which.min(ranges)]
+least_frequent_count <- min(ranges)
+```
+
+Overall, I mostly walked `r most_frequent_range` steps per day that there were `r most_frequent_count` days of the range. There was only `r least_frequent_count` day that I walk `r least_frequent_range` steps.
+
+```{r}
+ggplot(data = latest_data) +
+  geom_bar(aes(x = hours_walking), fill="blue") +
+  labs(title = "Steps ranges distribution")
+
+#maximum walking hours
+maximum <- max(latest_data$hours_walking)
+
+#minimum walking hours
+minimum <- min(latest_data$hours_walking)
+
+#average walking hours
+average_walking_hours <- round(mean(latest_data$hours_walking), 1)
+```
+
+Over `r num_dates`, I mostly walked 3 hours per day. The longest and shortest walking hours were `r maximum` and `r minimum` hours respectively and the average was `r average_walking_hours` hours.
+
+```{r}
+ggplot(data = latest_data) +
+  geom_bar(aes(x = activities), fill="green") +
+  labs(title = "Steps ranges distribution")
+
+# total number of dates that each activity contributed the most
+uni_dates <- sum(grepl("Going to University", latest_data$activities, ignore.case = TRUE))
+```
+
+The activity that contributed the most to my steps number was going to university (`r uni_dates` days).
+
+```{r}
+#total numbers of date tracked by each method
+smartphone_dates <- sum(grepl("smartphone", latest_data$tracking_methods, ignore.case = TRUE))
+
+estimated_dates <- sum(grepl("estimated", latest_data$tracking_methods, ignore.case = TRUE))
+
+smartwatch_dates <- sum(grepl("smartwatch", latest_data$tracking_methods, ignore.case = TRUE))
+
+ggplot(data = latest_data) +
+  geom_bar(aes(x = tracking_methods), fill="black") +
+  labs(title = "Steps ranges distribution")
+
+```
+
+The steps range and approximate walking hours were mostly tracked by my smartphone which was `r smartphone_dates` days, and there was only `r estimated_dates` and `r smartwatch_dates` days that I tracked it by estimating and smartwatch respectively. 
