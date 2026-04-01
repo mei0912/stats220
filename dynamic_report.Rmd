@@ -105,7 +105,7 @@ minimum <- min(latest_data$hours_walking)
 average_walking_hours <- round(mean(latest_data$hours_walking), 1)
 ```
 
-Over `r num_dates`, I mostly walked 3 hours per day. The longest and shortest walking hours were `r maximum` and `r minimum` hours respectively and the average was `r average_walking_hours` hours.
+Over `r num_dates` days, I mostly walked 3 hours per day. The longest and shortest walking hours were `r maximum` and `r minimum` hours respectively and the average was `r average_walking_hours` hours.
 
 ```{r}
 ggplot(data = latest_data) +
