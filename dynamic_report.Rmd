@@ -31,7 +31,6 @@ p {
 library(tidyverse)
 csv_file <- "https://docs.google.com/spreadsheets/d/e/2PACX-1vRWnCHH54zMXjApZ3AWLD5HP-F27-AL88Hd4FzOcmiFK8fPQfVwF6dQUml0-FrWEMjsdKAS8XAa7GL0/pub?gid=1032254020&single=true&output=csv"
 logged_data <- read_csv(csv_file)
-logged_data
 
 #rename variables in logged_data data frame
 latest_data <- logged_data %>%
@@ -41,7 +40,6 @@ latest_data <- logged_data %>%
          activities = 5,
          actual_date = 6,
          tracking_methods = 7) 
-latest_data
 
 #first actual date recorded
 start_date <- latest_data$actual_date[1]
