@@ -28,7 +28,7 @@ A little about me, part 2
 
 # stats220 - Project 2
 <h3>This is STATS 220 project 2</h3>
-I kept track of my number of steps per day for more than a month using a Google Form and Google Sheet, and analysed the data collected and generated a dynamic report by using R.
+I kept track of my number of steps per day for more than a month using Google Forms and Google Sheets, and analysed the data collected and generated a dynamic report by using R.
 
 [Link to the steps tracking form](https://docs.google.com/forms/d/e/1FAIpQLSdohddK0_waSwP9sDTrTJAstk_48ymqw9wasI7F6z-kWx36SQ/viewform?usp=dialog)
 
