@@ -1,4 +1,4 @@
-# stats220
+# stats220 - Foundation Progject
 
 This is my repo for STATS 220. 
 
@@ -10,8 +10,8 @@ A little about me:
 
 A meme that captures how I currently feel about my university studies is ![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
-
-<h1>This is for STATS 220 project 1</h1> 
+# stats220 - Project 1
+<h1>This is STATS 220 project 1</h1> 
 <h2> A little about me part 2</h2>
 <ul>
   <li>I am doing project 1</li>
@@ -25,3 +25,12 @@ A meme that captures how I currently feel about my university studies is ![](htt
 [Link to Data Science Club website](https://www.uoadsc.com/)
 
 ![A different animated GIF](https://i.pinimg.com/originals/85/db/98/85db9826348c79d166dd31188f7218fa.gif)
+
+# stats220 - Project 2
+<h1>This is STATS 220 project 2</h1> 
+<h2>I kept track of my number of steps per day for more than a month, analysed the data collected, and generated a dynamic report by using R</h2>
+
+[Link to the steps tracking form](https://docs.google.com/forms/d/e/1FAIpQLSdohddK0_waSwP9sDTrTJAstk_48ymqw9wasI7F6z-kWx36SQ/viewform?usp=dialog)
+
+[Link to dynamic report](https://mei0912.github.io/stats220/)
+
