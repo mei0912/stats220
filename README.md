@@ -1,4 +1,4 @@
-# stats220 - Foundation Project
+## stats220 - Foundation Project
 
 This is my repo for STATS 220. 
 
