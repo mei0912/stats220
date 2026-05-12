@@ -1,0 +1,89 @@
+---
+title: "My visual data story - Project 4"
+author: "Mai Pham - mpha134"
+date: "2026-04-29"
+subtitle: "STATS 220 Semester One, 2026"
+output: 
+  html_document:
+  code_folding: hide
+---
+
+```{=html}
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+```
+
+```{js}
+$(function() {
+  $(".level2").css('visibility', 'hidden');
+  $(".level2").first().css('visibility', 'visible');
+  $(".container-fluid").height($(".container-fluid").height() + 300);
+  $(window).on('scroll', function() {
+    $('h2').each(function() {
+      var h2Top = $(this).offset().top - $(window).scrollTop();
+      var windowHeight = $(window).height();
+      if (h2Top >= 0 && h2Top <= windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'visible');
+      } else if (h2Top > windowHeight / 2) {
+        $(this).parent('div').css('visibility', 'hidden');
+      }
+    });
+  });
+})
+```
+
+```{css echo=FALSE}
+.figcaption {display: none}
+
+body {
+  background: #a6bddb;
+}
+h1 {
+  color: #7a0177;
+  font-weight: 900;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+h2 {
+  color: #980043;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+  
+}
+h3 {
+  color: #c51b8a;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 700;
+}
+h4 {
+  color: #c51b8a;
+  font-family: "Lucida Console", "Courier New", monospace;
+  font-weight: 400;
+}
+p {
+  color: #dd1c77;
+  font-family: "Lucida Console", "Courier New", monospace;
+}
+
+```
+
+
+## Plot 1:
+
+![](C:/Users/Admin/New%20Zealand/UoA/Academic/STATS%20220/Project%204/plot1.png)
+
+Overall, I mostly walked 4000 - 7000 steps per day that there were 23 days of the range. There was only 2 day that I walk more than 10000 steps.
+
+## Plot 2:
+
+![](C:/Users/Admin/New%20Zealand/UoA/Academic/STATS%20220/Project%204/plot2.png)
+
+On average, I walked 1.98, 3.44, 3.16, 2.9, 2.98, 2.22, 1.9 hours on Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday over 4 weeks from 31/03/2026 to 29/04/2026. The boxplot showed that the there are variety of hours I walked in a day which was not consistent. Based on the median, it showed that I tended to walk for longer hours on weekdays than weekend.
+
+## Plot 3:
+
+![](C:/Users/Admin/New%20Zealand/UoA/Academic/STATS%20220/Project%204/plot3.png)
+
+Overall, the activity of going to University was the activity contributing the most to the my step ranges from Monday to Thursday. I have a part-time job on Friday and Sunday, so it contributed the most to my step range. Lastly, Saturday is weekend and I do not have work on that day, I stay at my department most of the time, so staying in my apartment is the activity contributing the most to my step range.
