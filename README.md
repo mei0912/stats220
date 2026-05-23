@@ -5,8 +5,8 @@ This is my repo for STATS 220.
 A little about me:
 
 - I am undertaking a degree in Bachelor of Science, Specialising in Data Science
-- I am taking STATS 220 because it is a compulsory course
-- I am interested in learning about data technology
+- I am taking STATS 220 to gain a better understanding of the processes involved in collecting, cleaning, and analysing data.
+- I am interested in learning about data technology and R language.
 
 A meme that captures how I currently feel about my university studies is![](https://c.tenor.com/8druEACXtX8AAAAd/tenor.gif)
 
@@ -26,7 +26,7 @@ A little about me, part 2
 
 ![A different animated GIF](https://i.pinimg.com/originals/85/db/98/85db9826348c79d166dd31188f7218fa.gif)
 
-# stats220 - Project 2
+# stats220 - Project 2 - Step Ranges
 <h3>This is STATS 220 project 2</h3>
 I kept track of my number of steps per day for more than a month using Google Forms and Google Sheets, and analysed the data collected and generated a dynamic report by using R.
 
@@ -35,3 +35,9 @@ I kept track of my number of steps per day for more than a month using Google Fo
 [Link to dynamic report](https://mei0912.github.io/stats220/)
 
 [Link to dynamic report code](https://github.com/mei0912/stats220/blob/main/dynamic_report.Rmd)
+
+# stats 220 - Project 4 - Step Ranges
+<h3>This is STATS 220 project 4</h3>
+I implemented improvements based on feedback from Project 2. I combined multiple variables to better visualise and analyse the collected data.
+
+[Link to report](https://mei0912.github.io/stats220/visual_data_story.html)
